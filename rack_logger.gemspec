@@ -5,6 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Allen Wei"]
   gem.email         = ["digruby@gmail.com"]
   gem.description   = %q{Rack logger support ActiveSupport LogSubscriber}
+  gem.summary       = %q{Rack logger support ActiveSupport LogSubscriber}
   gem.homepage      = "allenwei.cn"
 
   gem.files         = `git ls-files`.split($\)
