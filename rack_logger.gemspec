@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["digruby@gmail.com"]
   gem.description   = %q{Rack logger support ActiveSupport LogSubscriber}
   gem.summary       = %q{Rack logger support ActiveSupport LogSubscriber}
-  gem.homepage      = "allenwei.cn"
+  gem.homepage      = "https://github.com/allenwei/rack-logger"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
