@@ -13,4 +13,9 @@ Gem::Specification.new do |gem|
   gem.name          = "rack_logger"
   gem.require_paths = ["lib"]
   gem.version       = RackLogger::VERSION
+
+
+  gem.add_runtime_dependency 'rack'
+
+  gem.add_development_dependency 'rake'
 end

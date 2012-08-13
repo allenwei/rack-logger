@@ -16,13 +16,13 @@ Or install it yourself as:
 
 ## Usage
 
-  use RackLogger, LOGGER, {:label => "ActiveRecord", :class => ActiveRecord::LogSubscriber}
+    use RackLogger, LOGGER, {:label => "ActiveRecord", :class => ActiveRecord::LogSubscriber}
 
 will generate two logs per request:
 
-  Started GET "http://localhost:3000/ping" for 127.0.0.1 at 2012-08-13 23:22:23 +0800 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.77 Safari/537.1
+    Started GET "http://localhost:3000/ping" for 127.0.0.1 at 2012-08-13 23:22:23 +0800 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.77 Safari/537.1
 
-  Completed GET http://localhost:3456/ping 200 in 0.76ms (ActiveRecord: 0.30ms)
+    Completed GET http://localhost:3456/ping 200 in 0.76ms (ActiveRecord: 0.30ms)
 
 ## Contributing
 
