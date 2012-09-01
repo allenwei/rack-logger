@@ -52,7 +52,12 @@ class RackLogger
       msg << benchmarks.join(' | ')
       msg << ") "
       msg << "\n\n"
-      logger.info msg
+      if status != 200
+        msg << "body: #{body}"
+        logger.error msg
+      else
+        logger.info msg
+      end
     end
   end
 end
