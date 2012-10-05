@@ -47,7 +47,8 @@ class RackLogger
         end
       end
 
-      msg = "Completed #{request.request_method} #{ CGI.unescape(request.url)} #{status} in %.2fms" % time_cost
+      msg = "Completed #{request.request_method} #{ CGI.unescape(request.url)} #{status}"
+      msg << " in %.2fms" % time_cost
       msg << " ("
       msg << benchmarks.join(' | ')
       msg << ") "
