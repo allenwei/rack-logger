@@ -52,8 +52,16 @@ class RackLogger
       msg << " ("
       msg << benchmarks.join(' | ')
       msg << ") "
-      if status != 200
-        msg << "body: #{body}"
+      if status >= 400
+        body_str = ""
+        if body.respond_to? :each
+          body.each do |b|
+            body_str << b.to_s
+          end
+        else
+          body_str = body.inspect
+        end
+        msg << "body: #{body_str}"
         msg << "\n\n"
         logger.error msg
       else
