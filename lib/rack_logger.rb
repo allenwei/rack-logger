@@ -25,7 +25,7 @@ class RackLogger
     begin
       request = Rack::Request.new(env)
       time_start = Time.now
-      logger.info "Started #{request.request_method} \"#{request.url}\" for #{request.ip} at #{Time.now} #{request.user_agent}"
+      logger.info "Started #{request.request_method} \"#{CGI.unescape(request.url)}\" for #{request.ip} at #{Time.now} #{request.user_agent}"
       status, header, body = @app.call(env)
       # million seconds
       time_cost = (Time.now - time_start) * 1000
@@ -47,7 +47,7 @@ class RackLogger
         end
       end
 
-      msg = "Completed #{request.request_method} #{ CGI.unescape(request.url)} #{status}"
+      msg = "Completed #{request.request_method} \"#{CGI.unescape(request.url)}\" #{status}"
       msg << " in %.2fms" % time_cost
       msg << " ("
       msg << benchmarks.join(' | ')
