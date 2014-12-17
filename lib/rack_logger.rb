@@ -25,6 +25,8 @@ class RackLogger
     begin
       request = Rack::Request.new(env)
       time_start = Time.now
+      use_less = 1
+       puts "test"
       logger.info "Started #{request.request_method} \"#{request.url}\" for #{request.ip} at #{Time.now} #{request.user_agent}"
       Thread.current[:request_id] ||= UUIDTools::UUID.random_create.to_s
       status, header, body = @app.call(env)
